@@ -1,4 +1,4 @@
-(() => {
++(() => {
   const mobileMenu = document.querySelector('[data-menu]');
   const openMenuBtn = document.querySelector('[data-menu-open]');
   const closeMenuBtn = document.querySelector('[data-menu-close]');

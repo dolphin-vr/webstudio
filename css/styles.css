@@ -250,7 +250,8 @@ p {
 }
 
 .teams h2.title,
-.customers .title {
+.customers .title,
+.activities .title {
     font-weight: 700;
     font-size: 36px;
     line-height: 1.11;
@@ -385,6 +386,21 @@ p {
     letter-spacing: 0.02em;
     text-align: center;
     color: var(--white-bg);
+}
+
+.footer .sociales {
+    gap: 16px;
+}
+
+.footer .sociales .icon {
+    width: 24px;
+    height: 24px;
+}
+
+.footer .sociales .link {
+    padding: 8px;
+    /* background-color: var(--pri-brand); */
+    transition: background-color var(--cubic);
 }
 
 .footer .sociales .link:hover,
@@ -690,7 +706,7 @@ p {
 
 
  /* -=== hidden on mobile & tablet ===-  */
- @media screen and (max-width: 1119px) {
+ @media screen and (max-width: 1158px) {
     /* ======= ACTIVITIES ======= */
     .activities{
         display: none;
@@ -699,6 +715,7 @@ p {
 
   /* === Mobile CSS ===  */
 @media screen and (max-width: 767px) {
+    /* ======= HEADER ======= */
     .header .container {
         padding-top: 24px;
         padding-bottom: 22px;
@@ -719,8 +736,6 @@ p {
         height: 100%;
         padding: 80px 40px 40px;
         justify-content: space-between;
-    }
-    .menu .close-btn {
     }
     
     .page-nav .list{
@@ -792,8 +807,6 @@ p {
     }
 }
 
-
-
 @media screen and (min-height: 580px){
     .modal {
         position: absolute;
@@ -808,7 +821,7 @@ p {
     }
 }
 
- /* -=== Tablet CSS ===-  */
+ /* -===*** Tablet CSS ***===-  */
  @media screen and (min-width: 768px) {
     .container {
         max-width: 768px;
@@ -874,7 +887,12 @@ p {
         width: 16px;
         height: 16px;
     }
-
+    
+    .menu .link:hover,
+    .menu .link:focus {
+        color: var(--press-state);
+        fill: var(--press-state);
+    }
 
     /* ======= HERO ======= */
     .hero {
@@ -883,12 +901,18 @@ p {
             linear-gradient(var(--hero-bg), var(--hero-bg)),
             url(../images/hero-tab.jpg);
     }
+    .hero-title {
+        margin-bottom: 36px;
+        max-width: 496px;
+        font-size: 56px;
+        line-height: 1.07;
+    }
 
     /* ======= PRINCIPLE ======= */    
     .principle .list {
         flex-direction: row;
         flex-wrap: wrap;
-        align-items: center;
+        /* align-items: center; */
         gap: 72px 24px;
     }
     .principle .item{
@@ -903,6 +927,14 @@ p {
         gap: 72px 24px;
     }
 
+    /* ======= CUSTOMERS ======= */
+    .customers .list {
+        gap: 72px 24px;
+    }
+    .customers .link {
+        padding: 16px 32px;
+    }
+
     /* ======= FOOTER ======= */
     .footer .container {
         padding-left: 108px;
@@ -912,11 +944,16 @@ p {
         align-items: center;
         gap: 72px 24px;
     }
+    .footer .logo {
+        text-align: left;
+    }
     .footer .slogan {
         max-width: 264px;
     }
+    .footer-label {
+        text-align: left;
+    }
     .subscribe {
-        /* margin-left: auto; */
         align-items: flex-end;
         flex-direction: row;
         gap: 24px;
@@ -928,7 +965,132 @@ p {
  }
 
 
+/* -===*** Desktop CSS ***===-  */
+@media screen and (min-width: 1158px) {
+    .container {
+        max-width: 1158px;
+     }
+     .section {
+         padding-top: 120px;
+         padding-bottom: 120px;
+     }
+
+     /* ======= HEADER ======= */
+     .address{
+        margin-left: auto;
+        flex-direction: row;
+        gap: 40px;
+    }
+    .address .link {
+        font-size: 16px;
+        line-height: 1.5;
+        letter-spacing: 0.02em;
+    }
+
+    /* ======= HERO ======= */
+    .hero {
+        max-width: 1440px;
+        background-image:
+            linear-gradient(var(--hero-bg), var(--hero-bg)),
+            url(../images/hero-dsk.jpg);
+    }
+
+    .hero-title{
+        margin-bottom: 48px;
+    }
+
+    /* ======= PRINCIPLE ======= */
+    .principle .title,
+    .team.list .title,
+    .project-list h2 {
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 1.2;
+    }
+    .principle .list {
+        flex-wrap: nowrap;
+        gap: 24px;
+    }
+    .principle .item {
+        width: calc((100% - 72px) / 4);
+    }
+    .principle .item::before {
+        content: '';
+        display: block;
+        height: 112px;
+        margin-bottom: 8px;
+        background-color: var(--light);
+        border-radius: 4px;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 64px;
+    }
+    
+    .principle .item:nth-child(1):before {
+        background-image: url(../images/sprite.svg#radar);
+    }
+    
+    .principle .item:nth-child(2):before {
+        background-image: url(../images/sprite.svg#clock);
+    }
+    
+    .principle .item:nth-child(3):before {
+        background-image: url(../images/sprite.svg#diagram);
+    }
+    
+    .principle .item:nth-child(4):before {
+        background-image: url(../images/sprite.svg#astronaut);
+    }
+    
+    /* ======= /ACTIVITIES ======= */
+    .activities {
+        padding-bottom: 120px;
+    }
+        
+    .activities .list {
+        display: flex;
+        gap: 24px;
+    }
+    
+    .activities .item {
+        width: calc((100% - 48px) / 3);
+    }
+
+    /* ======= TEAM ======= */
+    .team.list {
+        flex-wrap: nowrap;
+        gap: 24px;
+    }
+
+    /* ======= CUSTOMERS ======= */
+    .customers .list {
+        flex-wrap: nowrap;
+        gap: 24px;
+    }
+    
+    /* ======= FOOTER ======= */
+    .footer {
+        padding-top: 100px;
+        padding-bottom: 100px;
+    }
+    .footer .container {
+        padding-left: 0;
+        padding-right: 0;
+        flex-direction: row;
+        justify-content: flex-start;
+        flex-wrap: nowrap;
+        align-items: flex-start;
+        gap: unset;
+    }
+    .footer .social {
+        margin-left: 120px;
+    }
+    .subscribe {
+        width: auto;
+        margin-left: auto;
+    }
 
 
+}
 
- /* ======= /ACTIVITIES ======= */
+ 

@@ -47,6 +47,12 @@ p {
     margin: 0;
 }
 
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+
 .list {
     list-style: none;
     margin: 0;
@@ -193,7 +199,7 @@ p {
         url(../images/hero-mob.jpg);
     background-repeat: no-repeat;
     background-position: center;
-    background-size: auto auto;
+    background-size: cover;
     text-align: center;
     padding-top: 112px;
     padding-bottom: 112px;
@@ -245,8 +251,6 @@ p {
 /* ======= TEAM ======= */
 .teams {
     background-color: var(--light);
-}
-.teams .container{
 }
 
 .teams h2.title,
@@ -795,6 +799,16 @@ p {
     
 }
 
+@media screen and ((max-width: 767px) and (min-device-pixel-ratio: 2)),
+((max-width: 767px) and (min-resolution: 192dpi)),
+((max-width: 767px) and (min-resolution: 2dppx)) {
+    .hero {
+        background-image:
+            linear-gradient(var(--hero-bg), var(--hero-bg)),
+            url(../images/hero-mob@2x.jpg);
+    }
+  }
+
 /* -=== Specific mobile CSS ===- */
 @media screen and (min-width: 480px) and (max-width: 767px) {
     .address .item:last-child{
@@ -964,6 +978,16 @@ p {
 
  }
 
+ @media screen and ((min-width: 768px) and (min-device-pixel-ratio: 2)),
+  ((min-width: 768px) and (min-resolution: 192dpi)),
+  ((min-width: 768px) and (min-resolution: 2dppx)) {    
+    .hero {
+        max-width: 768px;
+        background-image:
+            linear-gradient(var(--hero-bg), var(--hero-bg)),
+            url(../images/hero-tab@2x.jpg);
+    }
+  }
 
 /* -===*** Desktop CSS ***===-  */
 @media screen and (min-width: 1158px) {
@@ -1089,8 +1113,16 @@ p {
         width: auto;
         margin-left: auto;
     }
+}
 
-
+@media screen and ((min-width: 1158px) and (min-device-pixel-ratio: 2)),
+((min-width: 1158px) and (min-resolution: 192dpi)),
+((min-width: 1158px) and (min-resolution: 2dppx)) {    
+  .hero {
+      background-image:
+          linear-gradient(var(--hero-bg), var(--hero-bg)),
+          url(../images/hero-dsk@2x.jpg);
+  }
 }
 
  

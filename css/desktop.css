@@ -130,8 +130,6 @@ p {
     align-items: center;
 }
 
-.menu {}
-
 .menu .link {
     display: block;
     padding: 24px 0;
@@ -278,19 +276,19 @@ p {
 }
 
 .principle .item:nth-child(1):before {
-    background-image: url(../images/sprite.svg#ico-radar);
+    background-image: url(../images/sprite.svg#radar);
 }
 
 .principle .item:nth-child(2):before {
-    background-image: url(../images/sprite.svg#ico-clock);
+    background-image: url(../images/sprite.svg#clock);
 }
 
 .principle .item:nth-child(3):before {
-    background-image: url(../images/sprite.svg#ico-diagram);
+    background-image: url(../images/sprite.svg#diagram);
 }
 
 .principle .item:nth-child(4):before {
-    background-image: url(../images/sprite.svg#ico-astronaut);
+    background-image: url(../images/sprite.svg#astronaut);
 }
 
 /* ======= /PRINCIPLE ======= */
@@ -303,7 +301,7 @@ p {
 .activities .container {}
 
 .activities .title,
-.team .title,
+.teams .title,
 .customers .title {
     font-weight: 700;
     font-size: 36px;
@@ -327,7 +325,7 @@ p {
 /* ======= /ACTIVITIES ======= */
 
 /* ======= TEAM ======= */
-.team {
+.teams {
     background-color: var(--light);
 }
 
@@ -526,7 +524,7 @@ p {
     right: 24px;
     width: 24px;
     height: 24px;
-    background-image: url(../images/sprite.svg#ico-send);
+    background-image: url(../images/sprite.svg#send);
     background-size: 32px;
 }
 

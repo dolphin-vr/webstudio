@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,33 +12,55 @@
         integrity="sha512-wpPYUAdjBVSE4KJnH1VR1HeZfpl1ub8YT/NKx4PuQ5NmX2tKuGu6U/JRp5y+Y8XG2tV+wKQpNHVUX03MfMFn9Q==" crossorigin="anonymous" referrerpolicy="no-referrer">
     <link rel="stylesheet" href="./css/styles.css">
 </head>
-
 <body>
     <header class="header">
         <div class="container">
-            <nav class="page-nav">
-                <a href="./index.html" class="logo link">Web<span class="navi">Studio</span></a>
-                <ul class="menu list">
-                    <li class="item">
-                        <a href="./index.html" class="link">Studio</a>
-                    </li>
-                    <li class="item">
-                        <a href="./portfolio.html" class="link current-page">Portfolio</a>
-                    </li>
-                    <li class="item">
-                        <a href="" class="link">Contacts</a>
-                    </li>
-                </ul>
-            </nav>
-            <address>
-                <ul class="address list">
-                    <li class="item"><a href="mailto:info@devstudio.com" class="link">
-                        <svg class="icon"><use href="./images/sprite.svg#email"></use></svg> info@devstudio.com</a>
-                    </li>
-                    <li class="item"><a href="tel:+110001111111" class="link">
-                        <svg class="icon"><use href="./images/sprite.svg#phone"></use></svg> +11 (000) 111-11-11</a></li>
-                </ul>
-            </address>
+            <a href="./index.html" class="logo link">Web<span class="navi">Studio</span></a>
+            <button data-menu-open type="button" class="menu-btn">
+                <svg class="icon"><use href="./images/sprite.svg#menu"></use></svg>
+            </button>
+            <div class="menu" data-menu>
+                <button data-menu-close class="close-btn" aria-label="Close menu" type="button">
+                    <svg class="icon"><use href="./images/sprite.svg#close"></use></svg>
+                </button>
+                <nav class="page-nav">
+                    <ul class="list">
+                        <li class="item">
+                            <a href="./index.html" class="link">Studio</a>
+                        </li>
+                        <li class="item">
+                            <a href="./portfolio.html" class="link current-page">Portfolio</a>
+                        </li>
+                        <li class="item">
+                            <a href="" class="link">Contacts</a>
+                        </li>
+                    </ul>
+                </nav>
+                <address class="contacts">
+                    <ul class="address list">
+                        <li class="item"><a href="mailto:info@devstudio.com" class="link">
+                            <svg class="icon"><use href="./images/sprite.svg#email"></use></svg> info@devstudio.com</a>
+                        </li>
+                        <li class="item"><a href="tel:+110001111111" class="link">
+                            <svg class="icon"><use href="./images/sprite.svg#phone"></use></svg> +11 (000) 111-11-11</a>
+                        </li>
+                    </ul>
+                    <ul class="sociales list">
+                        <li class="item">
+                            <a href="" class="link"><svg class="icon"><use href="./images/sprite.svg#ico-ig"></use></svg></a>
+                        </li>
+                        <li class="item">
+                            <a href="" class="link"><svg class="icon"><use href="./images/sprite.svg#ico-tw"></use></svg></a>
+                        </li>
+                        <li class="item">
+                            <a href="" class="link"><svg class="icon"><use href="./images/sprite.svg#ico-fb"></use></svg></a>
+                        </li>
+                        <li class="item">
+                            <a href="" class="link"><svg class="icon"><use href="./images/sprite.svg#ico-in"></use></svg></a>
+                        </li>
+                    </ul>
+                </address>
+            </div>
         </div>
     </header>
     <main>
@@ -47,17 +68,25 @@
             <div class="container">
                 <h1 class="invisible">Our projects</h1>
                 <ul class="filter list">
-                    <li class="item"><button type="button" class="radio-btn btn">All</button></li>
-                    <li class="item"><button type="button" class="radio-btn btn">Web Site</button></li>
-                    <li class="item"><button type="button" class="radio-btn btn">App</button></li>
-                    <li class="item"><button type="button" class="radio-btn btn">Design</button></li>
-                    <li class="item"><button type="button" class="radio-btn btn">Marketing</button></li>
+                    <li class="item"><button type="button" class="radio-btn btn" id="1" onClick="showProject(this.id)">All</button></li>
+                    <li class="item"><button type="button" class="radio-btn btn" id="2" onClick="showProject(this.id)">Web Site</button></li>
+                    <li class="item"><button type="button" class="radio-btn btn" id="3" onClick="showProject(this.id)">App</button></li>
+                    <li class="item"><button type="button" class="radio-btn btn" id="4" onClick="showProject(this.id)">Design</button></li>
+                    <li class="item"><button type="button" class="radio-btn btn" id="5" onClick="showProject(this.id)">Marketing</button></li>
                 </ul>
                 <ul class="project-list list">
-                    <li class="project">
+                    <li class="project flt-app">
                         <a href="" class="link">
                             <div class="text-wrapper">
-                                <img src="./images/project-1.jpg" alt="project 1" width="360">
+                                <picture>
+                                    <source srcset="./images/projects/project-1-mob.jpg 1x, ./images/projects/project-1-mob@2x.jpg 2x"
+                                        media="(max-width: 767px)">
+                                    <source srcset="./images/projects/project-1-tab.jpg 1x, ./images/projects/project-1-tab@2x.jpg 2x"
+                                        media="(max-width: 1157px)">
+                                    <source srcset="./images/projects/project-1-dsk.jpg 1x, ./images/projects/project-1-dsk@2x.jpg 2x"
+                                        media="(min-width: 1158px)">
+                                    <img src="./images/projects/project-1-dsk.jpg" alt="project 1">
+                                </picture>
                                 <p class="slide-text">14 Stylish and User-Friendly App Design Concepts · Task Manager App · Calorie Tracker App · Exotic Fruit Ecommerce App · Cloud Storage App</p>
                             </div>
                             <div class="descr">
@@ -66,10 +95,18 @@
                             </div>
                         </a>
                     </li>
-                    <li class="project">
+                    <li class="project flt-market">
                         <a href="" class="link">
                             <div class="text-wrapper">
-                                <img src="./images/project-2.jpg" alt="project 2" width="360">
+                                <picture>
+                                    <source srcset="./images/projects/project-2-mob.jpg 1x, ./images/projects/project-2-mob@2x.jpg 2x"
+                                        media="(max-width: 767px)">
+                                    <source srcset="./images/projects/project-2-tab.jpg 1x, ./images/projects/project-2-tab@2x.jpg 2x"
+                                        media="(max-width: 1157px)">
+                                    <source srcset="./images/projects/project-2-dsk.jpg 1x, ./images/projects/project-2-dsk@2x.jpg 2x"
+                                        media="(min-width: 1158px)">
+                                    <img src="./images/projects/project-2-dsk.jpg" alt="project 2">
+                                </picture>
                                 <p class="slide-text">14 Stylish and User-Friendly App Design Concepts · Task Manager App · Calorie Tracker App · Exotic Fruit Ecommerce App · Cloud Storage App</p>
                             </div>
                             <div class="descr">
@@ -78,10 +115,18 @@
                             </div>
                         </a>
                     </li>
-                    <li class="project">
+                    <li class="project flt-app">
                         <a href="" class="link">
                             <div class="text-wrapper">
-                                <img src="./images/project-3.jpg" alt="project 3" width="360">
+                                <picture>
+                                    <source srcset="./images/projects/project-3-mob.jpg 1x, ./images/projects/project-3-mob@2x.jpg 2x"
+                                        media="(max-width: 767px)">
+                                    <source srcset="./images/projects/project-3-tab.jpg 1x, ./images/projects/project-3-tab@2x.jpg 2x"
+                                        media="(max-width: 1157px)">
+                                    <source srcset="./images/projects/project-3-dsk.jpg 1x, ./images/projects/project-3-dsk@2x.jpg 2x"
+                                        media="(min-width: 1158px)">
+                                    <img src="./images/projects/project-3-dsk.jpg" alt="project 3">
+                                </picture>
                                 <p class="slide-text">14 Stylish and User-Friendly App Design Concepts · Task Manager App · Calorie Tracker App · Exotic Fruit Ecommerce App · Cloud Storage App</p>
                             </div>
                             <div class="descr">
@@ -90,10 +135,18 @@
                             </div>
                         </a>
                     </li>
-                    <li class="project">
+                    <li class="project flt-market">
                         <a href="" class="link">
                             <div class="text-wrapper">
-                                <img src="./images/project-4.jpg" alt="project 4" width="360">
+                                <picture>
+                                    <source srcset="./images/projects/project-4-mob.jpg 1x, ./images/projects/project-4-mob@2x.jpg 2x"
+                                        media="(max-width: 767px)">
+                                    <source srcset="./images/projects/project-4-tab.jpg 1x, ./images/projects/project-4-tab@2x.jpg 2x"
+                                        media="(max-width: 1157px)">
+                                    <source srcset="./images/projects/project-4-dsk.jpg 1x, ./images/projects/project-4-dsk@2x.jpg 2x"
+                                        media="(min-width: 1158px)">
+                                    <img src="./images/projects/project-4-dsk.jpg" alt="project 4">
+                                </picture>
                                 <p class="slide-text">14 Stylish and User-Friendly App Design Concepts · Task Manager App · Calorie Tracker App · Exotic Fruit Ecommerce App · Cloud Storage App</p>
                             </div>
                             <div class="descr">
@@ -102,10 +155,18 @@
                             </div>
                         </a>
                     </li>
-                    <li class="project">
+                    <li class="project flt-design">
                         <a href="" class="link">
                             <div class="text-wrapper">
-                                <img src="./images/project-5.jpg" alt="project 5" width="360">
+                                <picture>
+                                    <source srcset="./images/projects/project-5-mob.jpg 1x, ./images/projects/project-5-mob@2x.jpg 2x"
+                                        media="(max-width: 767px)">
+                                    <source srcset="./images/projects/project-5-tab.jpg 1x, ./images/projects/project-5-tab@2x.jpg 2x"
+                                        media="(max-width: 1157px)">
+                                    <source srcset="./images/projects/project-5-dsk.jpg 1x, ./images/projects/project-5-dsk@2x.jpg 2x"
+                                        media="(min-width: 1158px)">
+                                    <img src="./images/projects/project-5-dsk.jpg" alt="project 5">
+                                </picture>
                                 <p class="slide-text">14 Stylish and User-Friendly App Design Concepts · Task Manager App · Calorie Tracker App · Exotic Fruit Ecommerce App · Cloud Storage App</p>
                             </div>
                             <div class="descr">
@@ -114,10 +175,18 @@
                             </div>
                         </a>
                     </li>
-                    <li class="project">
+                    <li class="project flt-market">
                         <a href="" class="link">
                             <div class="text-wrapper">
-                                <img src="./images/project-6.jpg" alt="project 6" width="360">
+                                <picture>
+                                    <source srcset="./images/projects/project-6-mob.jpg 1x, ./images/projects/project-6-mob@2x.jpg 2x"
+                                        media="(max-width: 767px)">
+                                    <source srcset="./images/projects/project-6-tab.jpg 1x, ./images/projects/project-6-tab@2x.jpg 2x"
+                                        media="(max-width: 1157px)">
+                                    <source srcset="./images/projects/project-6-dsk.jpg 1x, ./images/projects/project-6-dsk@2x.jpg 2x"
+                                        media="(min-width: 1158px)">
+                                    <img src="./images/projects/project-6-dsk.jpg" alt="project 6">
+                                </picture>
                                 <p class="slide-text">14 Stylish and User-Friendly App Design Concepts · Task Manager App · Calorie Tracker App · Exotic Fruit Ecommerce App · Cloud Storage App</p>
                             </div>
                             <div class="descr">
@@ -126,10 +195,18 @@
                             </div>
                         </a>
                     </li>
-                    <li class="project">
+                    <li class="project flt-design">
                         <a href="" class="link">
                             <div class="text-wrapper">
-                                <img src="./images/project-7.jpg" alt="project 7" width="360">
+                                <picture>
+                                    <source srcset="./images/projects/project-7-mob.jpg 1x, ./images/projects/project-7-mob@2x.jpg 2x"
+                                        media="(max-width: 767px)">
+                                    <source srcset="./images/projects/project-7-tab.jpg 1x, ./images/projects/project-7-tab@2x.jpg 2x"
+                                        media="(max-width: 1157px)">
+                                    <source srcset="./images/projects/project-7-dsk.jpg 1x, ./images/projects/project-7-dsk@2x.jpg 2x"
+                                        media="(min-width: 1158px)">
+                                    <img src="./images/projects/project-7-dsk.jpg" alt="project 7">
+                                </picture>
                                 <p class="slide-text">14 Stylish and User-Friendly App Design Concepts · Task Manager App · Calorie Tracker App · Exotic Fruit Ecommerce App · Cloud Storage App</p>
                             </div>
                             <div class="descr">
@@ -138,10 +215,18 @@
                             </div>
                         </a>
                     </li>
-                    <li class="project">
+                    <li class="project flt-web">
                         <a href="" class="link">
                             <div class="text-wrapper">
-                                <img src="./images/project-8.jpg" alt="project 8" width="360">
+                                <picture>
+                                    <source srcset="./images/projects/project-8-mob.jpg 1x, ./images/projects/project-8-mob@2x.jpg 2x"
+                                        media="(max-width: 767px)">
+                                    <source srcset="./images/projects/project-8-tab.jpg 1x, ./images/projects/project-8-tab@2x.jpg 2x"
+                                        media="(max-width: 1157px)">
+                                    <source srcset="./images/projects/project-8-dsk.jpg 1x, ./images/projects/project-8-dsk@2x.jpg 2x"
+                                        media="(min-width: 1158px)">
+                                    <img src="./images/projects/project-8-dsk.jpg" alt="project 8">
+                                </picture>
                                 <p class="slide-text">14 Stylish and User-Friendly App Design Concepts · Task Manager App · Calorie Tracker App · Exotic Fruit Ecommerce App · Cloud Storage App</p>
                             </div>
                             <div class="descr">
@@ -150,10 +235,18 @@
                             </div>
                         </a>
                     </li>
-                    <li class="project">
+                    <li class="project flt-web">
                         <a href="" class="link">
                             <div class="text-wrapper">
-                                <img src="./images/project-9.jpg" alt="project 9" width="360">
+                                <picture>
+                                    <source srcset="./images/projects/project-9-mob.jpg 1x, ./images/projects/project-9-mob@2x.jpg 2x"
+                                        media="(max-width: 767px)">
+                                    <source srcset="./images/projects/project-9-tab.jpg 1x, ./images/projects/project-9-tab@2x.jpg 2x"
+                                        media="(max-width: 1157px)">
+                                    <source srcset="./images/projects/project-9-dsk.jpg 1x, ./images/projects/project-9-dsk@2x.jpg 2x"
+                                        media="(min-width: 1158px)">
+                                    <img src="./images/projects/project-9-dsk.jpg" alt="project 9">
+                                </picture>
                                 <p class="slide-text">14 Stylish and User-Friendly App Design Concepts · Task Manager App · Calorie Tracker App · Exotic Fruit Ecommerce App · Cloud Storage App</p>
                             </div>
                             <div class="descr">
@@ -199,6 +292,8 @@
             </form>
         </div>
     </footer>
-</body>
 
+    <script src="./js/menu.js"></script>
+    <script src="./js/filter.js"></script>
+</body>
 </html>

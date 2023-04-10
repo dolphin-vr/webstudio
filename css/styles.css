@@ -161,10 +161,6 @@ img {
     fill: #FFFFFF;
 }
 
-.page-nav .list{
-    display: flex;
-    gap: 40px;
-}
 .page-nav .link {
     letter-spacing: 0.02em;
     text-transform: capitalize;
@@ -194,6 +190,8 @@ img {
     max-width: 428px;
     margin-left: auto;
     margin-right: auto;
+    padding-top: 112px;
+    padding-bottom: 112px;
     background-color: var(--dark);
     background-image:
         linear-gradient(var(--hero-bg), var(--hero-bg)),
@@ -202,8 +200,6 @@ img {
     background-position: center;
     background-size: cover;
     text-align: center;
-    padding-top: 112px;
-    padding-bottom: 112px;
 }
 
 .hero-title {
@@ -292,6 +288,7 @@ img {
     line-height: 1.2;
     text-align: center;
     letter-spacing: 0.02em;
+    color: var(--dark);
 }
 .team .base-text {
     margin-bottom: 8px;
@@ -584,8 +581,9 @@ img {
     width: 100%;
     padding-left: 38px;
     color: #000000;
-    background-color: transparent;
-    border: 1px solid rgba(33, 33, 33, 0.2);
+    border: 1px solid var(--modal-overlay);
+    border-color: var(--hero-bg);
+    border-color: var(--dark);
     border-radius: 4px;
 }
 
@@ -783,17 +781,19 @@ img {
         flex-direction: column;
         background-color: var(--light);
         position: fixed;
+        overflow-y: scroll;
+        overflow-x:hidden;
         top: 0;
         left: 0;
+        bottom: 0;
         z-index: 1;
         width: 100%;
-        height: 100%;
         padding: 80px 40px 40px;
         justify-content: space-between;
     }
     
-    .page-nav .list{
-        flex-direction: column;
+    .page-nav .item{
+        margin-bottom: 40px;
     }
     .page-nav .link{
         font-weight: 700;
@@ -868,6 +868,8 @@ img {
         position: relative;
         padding: 64px 12px 24px;
         max-width: 392px;
+        /* overflow-y: scroll; */
+        /* min-height: 600px; */
         margin-left: auto;
         margin-right: auto;
     }
@@ -881,7 +883,6 @@ img {
         top: 50%;
         left: 50%;
         width: 408px;
-        /* height: 576px; */
         transform: translate(-50%, -50%) scale(1);
     }
     .backdrop.is-hidden .modal {
@@ -906,6 +907,10 @@ img {
         align-items: center;
         justify-content: space-between;
         margin-left: 120px;
+    }
+    .page-nav .list{
+        display: flex;
+        gap: 40px;
     }
     .page-nav .link {
         display: block;
@@ -962,7 +967,7 @@ img {
         fill: var(--press-state);
     }
 
-    /* ======= HERO ======= */
+    /* ======= HERO tabl ======= */
     .hero {
         max-width: 768px;
         background-image:
@@ -980,11 +985,13 @@ img {
     .principle .list {
         flex-direction: row;
         flex-wrap: wrap;
-        /* align-items: center; */
         gap: 72px 24px;
     }
     .principle .item{
         width: calc((100% - 24px) / 2);
+    }
+    .principle .title {
+        text-align: left;
     }
 
     /* ======= TEAM ======= */
@@ -1059,10 +1066,18 @@ img {
     }
   }
 
+  @media screen and (max-width: 1157px) {
+    .principle p{
+        font-weight: 500;
+    }
+  }
+
 /* -===*** Desktop CSS ***===-  */
 @media screen and (min-width: 1158px) {
     .container {
         max-width: 1158px;
+        padding-left: 15px;
+        padding-right: 15px;
      }
      .section {
          padding-top: 120px;
@@ -1081,9 +1096,11 @@ img {
         letter-spacing: 0.02em;
     }
 
-    /* ======= HERO ======= */
+    /* ======= HERO desk ======= */
     .hero {
         max-width: 1440px;
+        padding-top: 188px;
+        padding-bottom: 188px;
         background-image:
             linear-gradient(var(--hero-bg), var(--hero-bg)),
             url(../images/hero-dsk.jpg);

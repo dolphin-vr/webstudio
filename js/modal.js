@@ -9,5 +9,5 @@
  
    function toggleModal() {
      refs.backdrop.classList.toggle("is-hidden");
-     document.body.classList.toggle('no-scroll');
+     document.body.classList.toggle("no-scroll");
    }

@@ -51,7 +51,8 @@ img {
     display: block;
     max-width: 100%;
     height: auto;
-  }
+}
+
 
 .list {
     list-style: none;
@@ -653,7 +654,7 @@ img {
     font-size: 12px;
     line-height: 1.17;
     letter-spacing: 0.04em;
-    white-space: pre-wrap;
+    /* white-space: pre-wrap; */
     white-space: pre;
     color: var(--subtle-text);
 }
@@ -715,7 +716,6 @@ img {
     margin-bottom: 48px;
     display: flex;
     flex-wrap: wrap;
-    /* justify-content: center; */
     gap: 16px 24px;
 }
 .radio-btn {
@@ -740,9 +740,6 @@ img {
     flex-wrap: wrap;
     align-items: center;
     gap: 48px;
-}
-.project img {
-    max-width: 396px;
 }
 .project .descr {
     padding: 32px 16px;
@@ -841,15 +838,7 @@ img {
     .contacts .sociales .icon{
         width: 24px;
         height: 24px;
-    }
-    
-    .modal {
-        position: relative;
-        max-width: 392px;
-        margin-left: auto;
-        margin-right: auto;
-    }
-    
+    }    
 }
 
 @media screen and ((max-width: 767px) and (min-device-pixel-ratio: 2)),
@@ -874,13 +863,25 @@ img {
     }
 }
 
-@media screen and (min-height: 580px){
+@media screen and (max-width: 419px) {
+    .modal {
+        position: relative;
+        padding: 64px 12px 24px;
+        max-width: 392px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .checkbox .label{
+        white-space: pre-wrap;
+    }
+}
+@media screen and (min-width: 420px) and (min-height: 600px){
     .modal {
         position: absolute;
         top: 50%;
         left: 50%;
         width: 408px;
-        height: 576px;
+        /* height: 576px; */
         transform: translate(-50%, -50%) scale(1);
     }
     .backdrop.is-hidden .modal {
@@ -1034,6 +1035,16 @@ img {
         padding-top: 64px;
         padding-bottom: 96px;
     }
+    .projects .filter {
+        justify-content: center;
+        margin-bottom: 64px;
+    }
+    .project-list {
+        gap: 72px 24px;
+    }
+    .project {
+        width: calc((100% - 24px) / 2);
+    }
 
  }
 
@@ -1175,10 +1186,18 @@ img {
 
     /* ----=  Portfolio =---- */
     .projects {
-        padding-top: 96px;
+        padding-top: 100px;
         padding-bottom: 120px;
     }
-    
+    .projects .filter {
+        margin-bottom: 72px;
+    }
+    .project-list {
+        gap: 48px 24px;
+    }
+    .project {
+        width: calc((100% - 48px) / 3);
+    }
     .text-wrapper {
         position: relative;
         overflow: hidden;

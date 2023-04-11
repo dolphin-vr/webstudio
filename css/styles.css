@@ -1016,7 +1016,7 @@ img {
         padding-right: 108px;
         flex-direction: row;
         flex-wrap: wrap;
-        align-items: center;
+        align-items: flex-start;
         gap: 72px 24px;
     }
     .footer .logo {
@@ -1190,7 +1190,6 @@ img {
         flex-direction: row;
         justify-content: flex-start;
         flex-wrap: nowrap;
-        align-items: flex-start;
         gap: unset;
     }
     .footer .social {
